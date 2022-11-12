@@ -29,21 +29,25 @@ jobs:
           name: Install API Dependencies
           command: |
            echo "TODO: Install dependencies in the the backend API  "
+           npm run api:install
       # TODO: Lint the frontend
       - run:
           name: Front-End Lint
           command: |
             echo "TODO: Lint the frontend"
+            npm run frontend:lint
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
           command: |
             echo "TODO: Build the frontend app"
+            npm run frontend:build
       # TODO: Build the backend API      
       - run:
           name: API Build
           command: |
             echo "TODO: Build the backend API"
+            npm run api:build
   # deploy step will run only after manual approval
   deploy:
     docker:
@@ -60,7 +64,18 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-            
+            echo "TODO: Install dependencies in the the backend API  "
+            npm run api:install
+            echo "TODO: Build the backend API"
+            npm run api:build
+            echo "TODO: Deploy the backend API"
+            npm run api:deploy
+            echo "TODO: Install Front-End Dependencies"
+            npm run frontend:install
+            echo "TODO: Build the frontend app"
+            npm run frontend:build
+            echo "TODO: Deploy the frontend app"
+            npm run frontend:deploy
 workflows:
   udagram:
     jobs:
