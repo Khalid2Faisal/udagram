@@ -14,14 +14,6 @@ jobs:
       # install node and checkout code
       - node/install:
           node-version: '14.15'
-      - eb/setup
-      aws-access-key-id: $AWS_ACCESS_KEY_ID
-      aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
-      aws-region: $AWS_REGION
-      - aws-cli/setup
-      aws-access-key-id: $AWS_ACCESS_KEY_ID
-      aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
-      aws-region: $AWS_REGION
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
@@ -71,19 +63,8 @@ jobs:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
-            echo "TODO: Install dependencies in the the backend API  "
-            npm run api:install
-            echo "TODO: Build the backend API"
-            npm run api:build
-            echo "TODO: Deploy the backend API"
-            npm run api:deploy
-            echo "TODO: Install Front-End Dependencies"
-            npm run frontend:install
-            echo "TODO: Build the frontend app"
-            npm run frontend:build
-            echo "TODO: Deploy the frontend app"
-            npm run frontend:deploy
+            echo "Deploy both apps"
+            npm run deploy
 workflows:
   udagram:
     jobs:
